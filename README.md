@@ -1,2 +1,4 @@
 # screeps-code-gael
-Unfortunately, I am in the process of updating my code, which means that it is currently useless. But I hope that by giving a quick read, it will inspire you.
+
+Plans for the future:
+  - In the Room.logistics module, replace the storage's id with an artificial object that would store its id of course, but also its position, supply, demand, currently targeting creep(s), 
