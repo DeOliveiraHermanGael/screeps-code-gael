@@ -7,6 +7,7 @@
 The complete restructuring of how the memory is organized within the the room, and the module itself. 
 
 1.1.1. The room: Instead of just hurling in and retrieving whatever variable I needed, I am currently organizing room memory into 2 categories: logistics, and booleans. Logistics contains 3 keys: 
+
 	- civilian: an array which registers the id's of the storages corresponding to various filters. In each index of the array are found multiple objects that correspond to the application of a certain filter or combinations of filters. They are all derived from the civilian[0].storages, which simply stocks all forms of storages in the room, with the exception of the objects that start with "primary", which are derived from the artificialSources object After that, civilian[i + 1] depends on civilian[i]. In other words, index's objects of the civilian array is derived from the previous one. 
 
 	- military: Empty for now
