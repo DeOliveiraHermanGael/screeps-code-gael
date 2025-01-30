@@ -1,41 +1,47 @@
 logistics = require('Room.logistics')
+artificialSources = logistics.artificialSources
+civilian = logistics.civilian
 module.exports = {
     run: function(creep) {
-        creep.say('im here')
-        if (creep.room.name == creep.memory.roomName && !creep.room.memory.initialized) {
+        if (false) {
             creep.room.memory.logistics = {
                 civilian: [
-                    { //0
-                        
+                    {
+                        storages: []
                     },
                     { //1
-                    
-                    
+                        primary: [],
+                        heavy: []
                     },
                     { //2
-                        
-                        
+                        primaryToSupply: [],
+                        primary_heavy: [],
+                        secondary: []
                     },
                     { //3
-                        
-                        
+                        primary_heavyToSupply: [],
+                        primary_heavyToResupply: [],
+                        secondary_extensions: [],
+                        secondary_heavy: []
                     },
                     { //4
-                        
-                        
+                        secondary_extensionsToSupply: [],
+                        secondary_heavyToSupply: [],
+                        secondary_heavyToResupply: []
                     },
                 ],
                 military: [
                 
                     ],
-                artificialSources: [
-                        
-                ],
+                artificialSources: []
             },
                 
             creep.room.memory.relay = {
                 civilian: {
-                    builder: {},
+                    builder: {
+                        structuresToRepair: [],
+                        structuresToBuild: []
+                    },
                     harvester: {}
                 },
                 military: {
@@ -44,15 +50,14 @@ module.exports = {
             }
             creep.room.memory.booleans = {
                 wartime: false,
-                initialized: false
+                initialized: true
             }
-            logistics.artificialSources.initialize(creep.room)
+            artificialSources.initialize(creep.room)
 
-        } else {
-            creep.moveTo(creep.memory.roomName)
-        }
+        } 
     }
 }
+
 
 
 
